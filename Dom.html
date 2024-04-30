@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>DOM</title>
+        <style>
+            .imgs{
+                width:100px;
+                height:100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <img src="image/가위.png" id="main">
+        </div>
+        <img src="image/가위.png" class="imgs">
+        <img src="image/바위.png" class="imgs">
+        <img src="image/보.png" class="imgs">
+        <script>
+            let main = document.querySelector("#main");
+            let imgs = document.getElementsByClassName("imgs");
+            function changePic(){
+                let newPic = this.src;
+                main.src= newPic;
+            }
+            for(let i = 0 ; i<imgs.length;i++){
+                imgs[i].addEventListener("click",changePic);
+            }
+
+          
+
+        </script>
+
+    </body>
+</html>
